@@ -1,0 +1,36 @@
+query:create a department table
+
+create table department_47
+(deptId number(10) primary key,
+ deptName varchar(20) NOT NULL
+); 
+
+Table created.
+
+CREATE TABLE employee_47 (
+    empId iNT PRIMARY KEY,
+    empName VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL ,
+    hireDate date, 
+    deptId INT,
+    FOREIGN KEY (deptId) REFERENCES department_47(deptId)
+);
+Table created.
+
+
+query : insert record into department_47 table 
+
+INSERT INTO department_47 (deptId, deptName) VALUES
+(1, 'Human Resources') ;
+
+1 row created.
+
+query : insert multiple records into department_47 table 
+INSERT ALL   
+    INTO department_47 (deptId, deptName) VALUES (2, 'Finance')
+    INTO department_47 (deptId, deptName) VALUES (3, 'IT')
+    INTO department_47 (deptId, deptName) VALUES (4, 'Marketing')
+    INTO department_47 (deptId, deptName) VALUES (5, 'Sales')
+SELECT * FROM dual;
+
+4 rows created.
